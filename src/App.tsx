@@ -129,7 +129,7 @@ function App() {
             <div className="md:text-right">
               <h4 className="font-semibold text-gray-300">Kontakt</h4>
               <p className="mt-2 text-gray-400">info@heumaier-consulting.de</p>
-              <p className="text-gray-400">+49 (040) 123-4567</p>
+              <p className="text-gray-400">+49 (040) 38651929</p>
               <p className="text-gray-400 mt-2">Eppendorfer Weg<br />202053 Hamburg</p>
             </div>
           </div>
