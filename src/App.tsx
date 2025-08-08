@@ -1,5 +1,7 @@
 import { ArrowRight, Building2, Cloud, GitBranch, Scale, TrendingUp, AlertCircle, Users } from 'lucide-react';
-import React from 'react';
+import React, { useEffect } from 'react';
+import CookieConsent from './components/CookieConsent';
+import { trackCalendlyClick, trackServiceView, trackContactClick, trackScrollDepth, trackPageView } from './utils/analytics';
 
 const services = [
   {
@@ -49,7 +51,43 @@ const services = [
 ];
 
 function App() {
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView();
+    
+    // Track scroll depth
+    let scrolled25 = false;
+    let scrolled50 = false;
+    let scrolled75 = false;
+    let scrolled100 = false;
+    
+    const handleScroll = () => {
+      const scrollPercentage = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+      
+      if (!scrolled25 && scrollPercentage >= 25) {
+        trackScrollDepth(25);
+        scrolled25 = true;
+      }
+      if (!scrolled50 && scrollPercentage >= 50) {
+        trackScrollDepth(50);
+        scrolled50 = true;
+      }
+      if (!scrolled75 && scrollPercentage >= 75) {
+        trackScrollDepth(75);
+        scrolled75 = true;
+      }
+      if (!scrolled100 && scrollPercentage >= 95) {
+        trackScrollDepth(100);
+        scrolled100 = true;
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleScheduleClick = () => {
+    trackCalendlyClick(); // Track the conversion event
     window.open('https://calendly.com/heumaierventures-info/15-minute-intro', '_blank');
   };
 
@@ -88,7 +126,11 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
+              <div 
+                key={index} 
+                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition"
+                onMouseEnter={() => trackServiceView(service.title)}
+              >
                 <div className="flex items-center mb-4">
                   <service.icon className="h-8 w-8 text-emerald-600" />
                   <h3 className="ml-3 text-xl font-semibold text-gray-900">{service.title}</h3>
@@ -168,8 +210,20 @@ function App() {
             </div>
             <div className="md:text-right">
               <h4 className="font-semibold text-gray-300">Kontakt</h4>
-              <p className="mt-2 text-gray-400">info@heumaier-consulting.de</p>
-              <p className="text-gray-400">+49 (177) 320 8516</p>
+              <a 
+                href="mailto:info@heumaier-consulting.de" 
+                className="mt-2 text-gray-400 hover:text-gray-300 block"
+                onClick={() => trackContactClick('email')}
+              >
+                info@heumaier-consulting.de
+              </a>
+              <a 
+                href="tel:+491773208516" 
+                className="text-gray-400 hover:text-gray-300 block"
+                onClick={() => trackContactClick('phone')}
+              >
+                +49 (177) 320 8516
+              </a>
               <p className="text-gray-400 mt-2">Hamburg, Deutschland</p>
             </div>
           </div>
@@ -178,6 +232,9 @@ function App() {
           </div>
         </div>
       </footer>
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
     </div>
   );
 }
