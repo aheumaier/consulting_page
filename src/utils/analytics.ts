@@ -1,13 +1,15 @@
-// Analytics utility functions for GTM/GA4
+// Analytics utility functions for GA4 (gtag.js)
 declare global {
   interface Window {
+    gtag?: (...args: any[]) => void;
     dataLayer: any[];
   }
 }
 
-// Initialize dataLayer
+// Initialize gtag
 if (typeof window !== 'undefined') {
   window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
 }
 
 // Check if user has consented to analytics
@@ -19,11 +21,9 @@ export const hasAnalyticsConsent = (): boolean => {
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
   if (!hasAnalyticsConsent()) return;
   
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: eventName,
-    ...parameters
-  });
+  if (typeof window.gtag !== 'undefined') {
+    window.gtag('event', eventName, parameters);
+  }
 };
 
 // Track Calendly button click (high-value conversion)
@@ -66,9 +66,11 @@ export const trackScrollDepth = (percentage: number) => {
 export const trackPageView = (pagePath?: string) => {
   if (!hasAnalyticsConsent()) return;
   
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'page_view',
-    page_path: pagePath || window.location.pathname
-  });
+  if (typeof window.gtag !== 'undefined') {
+    window.gtag('event', 'page_view', {
+      page_path: pagePath || window.location.pathname,
+      page_location: window.location.href,
+      page_title: document.title
+    });
+  }
 };

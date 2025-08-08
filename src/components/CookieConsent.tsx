@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    [key: string]: any;
+  }
+}
+
 const CookieConsent: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
 
@@ -15,20 +22,28 @@ const CookieConsent: React.FC = () => {
     localStorage.setItem('cookie-consent', 'accepted');
     setShowBanner(false);
     
-    // Enable GTM/GA4 tracking
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'consent_given',
-      'consent_type': 'analytics'
-    });
+    // Enable GA4 tracking and send consent event
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+      window.gtag('event', 'consent_given', {
+        'consent_type': 'analytics'
+      });
+    }
   };
 
   const handleReject = () => {
     localStorage.setItem('cookie-consent', 'rejected');
     setShowBanner(false);
     
-    // Disable GTM/GA4 tracking
-    window['ga-disable-GA_MEASUREMENT_ID'] = true;
+    // Disable GA4 tracking
+    window['ga-disable-G-H0F0RN52HL'] = true;
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('consent', 'update', {
+        'analytics_storage': 'denied'
+      });
+    }
   };
 
   if (!showBanner) return null;
