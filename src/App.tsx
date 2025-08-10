@@ -10,7 +10,7 @@ const services = [
     icon: GitBranch,
     features: [
       "Rapid Assessment in 2-4 Wochen",
-      "Turnaround-Execution für failing Initiativen",
+      "Turnaround-Execution für kritischer Initiativen",
       "Aufbau hochperformanter Engineering-Kulturen",
       "PE-Value-Creation & Exit-Vorbereitung"
     ]
@@ -28,7 +28,7 @@ const services = [
   },
   {
     title: "Post-Merger Integration",
-    description: "Schnelle Technologie-Integration nach M&A. 4 erfolgreiche Integrationen, inkl. 3-Monats-Fast-Track.",
+    description: "Schnelle Technologie-Integration nach M&A.",
     icon: Users,
     features: [
       "Systemkonsolidierung und Migration",
