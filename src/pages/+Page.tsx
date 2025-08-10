@@ -1,16 +1,16 @@
-import { ArrowRight, Building2, Cloud, GitBranch, Scale, TrendingUp, AlertCircle, Users } from 'lucide-react';
+import { ArrowRight, Building2, GitBranch, AlertCircle, Users } from 'lucide-react';
 import React, { useEffect } from 'react';
-import CookieConsent from './components/CookieConsent';
-import { trackCalendlyClick, trackServiceView, trackContactClick, trackScrollDepth, trackPageView } from './utils/analytics';
+import CookieConsent from '../components/CookieConsent';
+import { trackCalendlyClick, trackServiceView, trackContactClick, trackScrollDepth, trackPageView } from '../utils/analytics';
 
-const services = [
+export const services = [
   {
     title: "Interim CTO Services",
     description: "Erfahrene Führung für kritische Transformationsphasen. Fix what's broken, scale what works.",
     icon: GitBranch,
     features: [
       "Rapid Assessment in 2-4 Wochen",
-      "Turnaround Execution für kritische Initiativen",
+      "Turnaround-Execution für kritischer Initiativen",
       "Aufbau hochperformanter Engineering-Kulturen",
       "PE-Value-Creation & Exit-Vorbereitung"
     ]
@@ -50,7 +50,7 @@ const services = [
   }
 ];
 
-function App() {
+export function Page() {
   // Track page view on component mount
   useEffect(() => {
     trackPageView();
@@ -238,5 +238,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
