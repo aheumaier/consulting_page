@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import CookieConsent from '../components/CookieConsent';
 import { trackCalendlyClick, trackServiceView, trackContactClick, trackScrollDepth, trackPageView } from '../utils/analytics';
 
-export const services = [
+const services = [
   {
     title: "Interim CTO Services",
     description: "Erfahrene Führung für kritische Transformationsphasen. Fix what's broken, scale what works.",
