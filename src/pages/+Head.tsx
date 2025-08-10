@@ -1,86 +1,182 @@
-import React from 'react';
+import React from "react";
 
 export function Head() {
   return (
     <>
-      <meta charSet="UTF-8" />
-      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>HeumaierConsulting - Interim Management</title>
 
-      {/* SEO Meta Tags */}
+      <meta name="theme-color" content="#10b981" />
+
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="https://scripts.simpleanalyticscdn.com" />
+
+      <title>
+        Interim CTO Hamburg | Andreas Heumaier - Built Tech Cultures That Deliver, Adapt & Scale
+      </title>
+
       <meta
         name="description"
-        content="Interim CTO & Management für Tech-Unternehmen in Hamburg. Spezialisiert auf Technical Due Diligence, Post-Merger Integration und Turnaround Management"
+        content="Interim CTO | Built Tech Cultures That Deliver, Adapt & Scale | PE Turnaround | Ex-Microsoft"
       />
-      <meta
-        name="keywords"
-        content="Interim CTO Hamburg, Post-Merger Integration, Turnaround Management, SaaS Transformation, Interim CTO Deutschland, Fractional CTO DACH, Interim Executive, PE Portfolio Company, Private Equity, Technical Due Diligence, Healthcare Tech, Interim Manager Hamburg"
-      />
+
       <meta name="author" content="Andreas Heumaier" />
 
-      {/* Open Graph for LinkedIn/XING */}
       <meta
         property="og:title"
-        content="Andreas Heumaier - Interim CTO & Tech Leadership"
+        content="Andreas Heumaier - Interim CTO & Turnaround Executive"
       />
       <meta
         property="og:description"
-        content="Fix what's broken, scale what works. Interim Management für kritische Transformationsphasen."
+        content="Technology Leadership für kritische Transformationsphasen. Fix what's broken, scale what works. Spezialisiert auf PE-backed SaaS, Healthcare Tech und regulierte Industrien."
       />
-      <meta property="og:image" content="/og-image.png" />
+
+      {/* Open Graph */}
+      <meta
+        property="og:image"
+        content="https://heumaier-consulting.de/og-image.png"
+      />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content="https://heumaier-consulting.de" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="de_DE" />
+      <meta property="og:site_name" content="Heumaier Consulting" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@your_twitter_handle" />
+      <meta name="twitter:creator" content="@your_twitter_handle" />
       <meta
         name="twitter:title"
-        content="Heumaier Consulting - Interim CTO Services"
+        content="Andreas Heumaier - Interim CTO Hamburg"
       />
       <meta
         name="twitter:description"
-        content="Interim Management für Tech-Unternehmen. Technical Due Diligence, Post-Merger Integration, Turnaround."
+        content="Interim CTO | Built Tech Cultures That Deliver, Adapt & Scale | PE Turnaround | Ex-Microsoft"
       />
-      <meta name="twitter:image" content="/og-image.png" />
+      <meta
+        name="twitter:image"
+        content="https://heumaier-consulting.de/og-image.png"
+      />
 
-      {/* Canonical & Verification */}
+      {/* International SEO */}
+      <link
+        rel="alternate"
+        hreflang="de"
+        href="https://heumaier-consulting.de"
+      />
+      <link
+        rel="alternate"
+        hreflang="en"
+        href="https://heumaier-consulting.de/en"
+      />
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href="https://heumaier-consulting.de"
+      />
+
+      {/* Canonical URL */}
       <link rel="canonical" href="https://heumaier-consulting.de" />
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="German" />
-      <meta name="revisit-after" content="7 days" />
 
-      {/* Structured Data for German Business */}
+      {/* Robots directives */}
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1"
+      />
+      <meta name="googlebot" content="index, follow" />
+
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "Heumaier Consulting",
-            "description": "Interim CTO & Management für Tech-Unternehmen",
-            "url": "https://heumaier-consulting.de",
-            "telephone": "+491773208516",
-            "email": "info@heumaier-consulting.de",
-            "address": {
+            "@id": "https://heumaier-consulting.de/#organization",
+            name: "Heumaier Consulting",
+            alternateName: "Heumaier Ventures UG",
+            description:
+              "Interim CTO & Management für Tech-Unternehmen in DACH-Region",
+            url: "https://heumaier-consulting.de",
+            logo: "https://heumaier-consulting.de/logo.png",
+            telephone: "+49-177-3208516",
+            email: "info@heumaier-consulting.de",
+            address: {
               "@type": "PostalAddress",
-              "addressLocality": "Hamburg",
-              "addressCountry": "DE"
+              addressLocality: "Hamburg",
+              addressRegion: "Hamburg",
+              postalCode: "20095",
+              addressCountry: "DE",
             },
-            "sameAs": [
-              "https://calendly.com/heumaierventures-info/15-minute-intro"
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 53.5511,
+              longitude: 9.9937,
+            },
+            sameAs: [
+              "https://www.linkedin.com/in/andreasheumaier/",
+              "https://calendly.com/heumaierventures-info/15-minute-intro",
             ],
-            "priceRange": "€€€",
-            "serviceType": [
+            priceRange: "€€€€",
+            areaServed: ["DE", "AT", "CH"],
+            serviceType: [
               "Interim CTO Services",
               "Technical Due Diligence",
               "Post-Merger Integration",
-              "Turnaround Management"
-            ]
-          })
+              "Turnaround Management",
+              "Fractional CTO Services",
+            ],
+            founder: {
+              "@type": "Person",
+              name: "Andreas Heumaier",
+              jobTitle: "Interim CTO & Turnaround Executive",
+              url: "https://heumaier-consulting.de/about",
+              sameAs: "https://www.linkedin.com/in/andreasheumaier/",
+            },
+          }),
         }}
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://heumaier-consulting.de",
+              },
+            ],
+          }),
+        }}
+      />
+
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <link rel="preconnect" href="https://scripts.simpleanalyticscdn.com" />
 
       {/* Google tag (gtag.js) */}
       <script
@@ -96,7 +192,7 @@ export function Head() {
             }
             gtag("js", new Date());
             gtag("config", "G-H0F0RN52HL");
-          `
+          `,
         }}
       />
     </>
