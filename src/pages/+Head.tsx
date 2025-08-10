@@ -3,9 +3,6 @@ import React from "react";
 export function Head() {
   return (
     <>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
       <meta name="theme-color" content="#10b981" />
 
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
