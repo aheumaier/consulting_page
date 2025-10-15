@@ -3,7 +3,7 @@ import vikeReact from 'vike-react/config';
 
 export default {
   extends: vikeReact,
-  title: 'HeumaierConsulting - Interim Management',
+  title: 'HeumaierInterim - Interim Management',
   lang: 'de',
   prerender: true,
 } satisfies Config;
