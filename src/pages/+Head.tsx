@@ -31,14 +31,14 @@ export function Head() {
       {/* Open Graph */}
       <meta
         property="og:image"
-        content="https://heumaier-consulting.de/og-image.png"
+        content="https://heumaier-interim.de/og-image.png"
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:url" content="https://heumaier-consulting.de" />
+      <meta property="og:url" content="https://heumaier-interim.de" />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="de_DE" />
-      <meta property="og:site_name" content="Heumaier Consulting" />
+      <meta property="og:site_name" content="Heumaier Interim" />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -54,28 +54,28 @@ export function Head() {
       />
       <meta
         name="twitter:image"
-        content="https://heumaier-consulting.de/og-image.png"
+        content="https://heumaier-interim.de/og-image.png"
       />
 
       {/* International SEO */}
       <link
         rel="alternate"
         hreflang="de"
-        href="https://heumaier-consulting.de"
+        href="https://heumaier-interim.de"
       />
       <link
         rel="alternate"
         hreflang="en"
-        href="https://heumaier-consulting.de/en"
+        href="https://heumaier-interim.de/en"
       />
       <link
         rel="alternate"
         hreflang="x-default"
-        href="https://heumaier-consulting.de"
+        href="https://heumaier-interim.de"
       />
 
       {/* Canonical URL */}
-      <link rel="canonical" href="https://heumaier-consulting.de" />
+      <link rel="canonical" href="https://heumaier-interim.de" />
 
       {/* Robots directives */}
       <meta
@@ -109,15 +109,15 @@ export function Head() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "@id": "https://heumaier-consulting.de/#organization",
-            name: "Heumaier Consulting",
+            "@id": "https://heumaier-interim.de/#organization",
+            name: "Heumaier Interim",
             alternateName: "Heumaier Ventures UG",
             description:
               "Interim CTO & Management für Tech-Unternehmen in DACH-Region",
-            url: "https://heumaier-consulting.de",
-            logo: "https://heumaier-consulting.de/logo.png",
+            url: "https://heumaier-interim.de",
+            logo: "https://heumaier-interim.de/logo.png",
             telephone: "+49-177-3208516",
-            email: "info@heumaier-consulting.de",
+            email: "info@heumaier-interim.de",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Hamburg",
@@ -147,7 +147,7 @@ export function Head() {
               "@type": "Person",
               name: "Andreas Heumaier",
               jobTitle: "Interim CTO & Turnaround Executive",
-              url: "https://heumaier-consulting.de/about",
+              url: "https://heumaier-interim.de/about",
               sameAs: "https://www.linkedin.com/in/andreasheumaier/",
             },
           }),
@@ -165,7 +165,7 @@ export function Head() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://heumaier-consulting.de",
+                item: "https://heumaier-interim.de",
               },
             ],
           }),
