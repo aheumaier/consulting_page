@@ -96,7 +96,7 @@ export function Page() {
       <header className="bg-white shadow-sm">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">Heumaier Consulting</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Heumaier Interim</h1>
             <button 
               onClick={handleScheduleClick}
               className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition"
@@ -211,11 +211,11 @@ export function Page() {
             <div className="md:text-right">
               <h4 className="font-semibold text-gray-300">Kontakt</h4>
               <a 
-                href="mailto:info@heumaier-consulting.de" 
+                href="mailto:info@heumaier-interim.de" 
                 className="mt-2 text-gray-400 hover:text-gray-300 block"
                 onClick={() => trackContactClick('email')}
               >
-                info@heumaier-consulting.de
+                info@heumaier-interim.de
               </a>
               <a 
                 href="tel:+491773208516" 
