@@ -88,7 +88,7 @@ function App() {
 
   const handleScheduleClick = () => {
     trackCalendlyClick(); // Track the conversion event
-    window.open('https://calendly.com/heumaierventures-info/15-minute-intro', '_blank');
+    window.open('https://calendly.com/heumaier-interim/15-minute-intro', '_blank');
   };
 
   return (
