@@ -132,7 +132,7 @@ export function Head() {
             },
             sameAs: [
               "https://www.linkedin.com/in/andreasheumaier/",
-              "https://calendly.com/heumaierventures-info/15-minute-intro",
+              "https://calendly.com/heumaier-interim/15-minute-intro",
             ],
             priceRange: "€€€€",
             areaServed: ["DE", "AT", "CH"],
